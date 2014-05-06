@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define ROWS 80
-#define COLUMNS 250
 
 
 int init(char* range);
@@ -88,8 +86,8 @@ void writeline(int charrange)
 
 	int strlength, display, counter,basex, basey, waiter;
 	strlength = rand() % 80 + 20;
-	basex = rand() % COLUMNS + 1;
-	basey = rand() % ROWS + 1;
+	basex = rand() % COLS + 1;
+	basey = rand() % LINES + 1;
 
 	for(counter=0;counter<strlength;counter++)
 	{
