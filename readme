@@ -1,0 +1,35 @@
+This (if you have run it you can tell) is a small demo that allows you to create screen effects similar to those in the movie.
+There is little else to it than it is a semi-cool text screensaver to run if you leave your terminal.
+
+./matrix <char range>
+
+The char range allows you to limit to charaters between this and 127, which is the last value on the ASCII table(on many sites
+and google images).
+
+This will compile on anything running an operating system that supports a form of curses past Unix System V(mid 1980s), although
+some modifications are required in order to compile on anything that is Linux or similar *nix supporting ncurses.
+
+All you have to do is change the #include <ncurses.h> to <curses.h> and have curses installed If running *nix or if you have
+pdcurses installed on windows or MS-DOS. 
+
+The command to compile is the following on Linux or modern *nix:
+
+gcc	-o	matrix	main.c	-lncurses
+
+On older *nix:
+
+cc	-o	natrix	main.c	-lcurses
+
+On windows with gcc (if you use visual studio stop using it, and you will also need pdcurses.dll in the directory with the exec):
+
+gcc	-o	matrix	main.c	-lpdcurses
+
+NOTE: you need to have either pdcurses, ncurses or curses for the compilation for this to work. If you want a binary for raspberry
+pi but cannot be bothered to compile please private message me on YouTube
+
+Thanks for reading
+
+Giga Raptor
+
+
+PS: This is under GNU GPL agreement
