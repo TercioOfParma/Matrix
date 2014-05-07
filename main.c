@@ -14,14 +14,14 @@ int main(int argc, char* argv[])
 
 	srand(time(NULL));
 	int range, usrinput;
-	if(argv[1] != NULL)//allows user customisable range
+	if(argv[1] != NULL)//allows user customisable range over ASCII
 	{
 	range = init(argv[1]);
 
 	}
 	else
 	{
-	range = init("128");
+	range = init("128");//Default range
 	}
 	while(1==1)
 	{
@@ -56,7 +56,7 @@ int init(char *charrange)
 	int x,y;
 	init_pair(1,COLOR_GREEN, COLOR_BLACK);
 	init_pair(2,COLOR_WHITE, COLOR_BLACK);
-	int rangeval = atol(charrange);
+	int rangeval = atol(charrange);//looks at the integer conversion of the ASCII range command line arguement
 	if(rangeval > 128 || rangeval < 10)
 	{
 		return 128;
@@ -96,7 +96,7 @@ void writeline(int charrange)
 		{
 			deinit();
 		}
-		start.tv_nsec = 15000000 + 1500000;
+		start.tv_nsec = 15000000 + 1500000;//roughly 0.3 seconds between inputs of characters
 		attroff(COLOR_PAIR(1));
 		display = rand() % charrange + 33;
 		attron(A_BOLD | COLOR_PAIR(2));
